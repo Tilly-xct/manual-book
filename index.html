@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高校统战工作模块操作手册</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft Yahei", system-ui, sans-serif;
+            background-color: #f6f8fa;
+            color: #333;
+            line-height: 1.8;
+        }
+        /* 整体布局 */
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* 侧边目录栏 */
+        .sidebar {
+            width: 280px;
+            background: #222831;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            padding: 24px 16px;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+        }
+        .sidebar h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #393E46;
+        }
+        .toc-list {
+            list-style: none;
+        }
+        /* H2 主章节 */
+        .toc-h2 {
+            margin: 6px 0;
+        }
+        .toc-h2 a {
+            color: #d1d9e6;
+            text-decoration: none;
+            display: block;
+            padding: 6px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+        /* H3 子章节 缩进 */
+        .toc-h3 {
+            margin: 4px 0 4px 16px;
+            border-left: 2px solid #393E46;
+        }
+        .toc-h3 a {
+            color: #a9b2c3;
+            text-decoration: none;
+            display: block;
+            padding: 5px 8px;
+            font-size: 13px;
+            transition: 0.2s;
+        }
+        /* 当前激活目录高亮 */
+        .toc-item.active a {
+            background-color: #0092ca;
+            color: #fff !important;
+        }
+        .toc-item a:hover {
+            background-color: #393E46;
+            color: #fff;
+        }
+
+        /* 主内容区 */
+        .main {
+            flex: 1;
+            padding: 40px 50px;
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #fff;
+            min-height: 100vh;
+        }
+        .main h1 {
+            font-size: 30px;
+            color: #222;
+            margin-bottom: 30px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #0092ca;
+        }
+        .main h2 {
+            font-size: 22px;
+            margin: 36px 0 12px;
+            color: #222831;
+            scroll-margin-top: 20px;
+        }
+        .main h3 {
+            font-size: 18px;
+            margin: 24px 0 10px;
+            color: #333;
+            scroll-margin-top: 20px;
+        }
+        .main p {
+            margin: 12px 0;
+            font-size: 15px;
+            color: #444;
+        }
+
+        /* 列表样式优化 */
+        .main ul, .main ol {
+            padding-left: 24px;
+            margin: 12px 0;
+        }
+        .main li {
+            margin: 8px 0;
+            font-size: 15px;
+            color: #444;
+        }
+
+        /* 表格样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        table th, table td {
+            border: 1px solid #eee;
+            padding: 10px 12px;
+            font-size: 14px;
+        }
+        table th {
+            background: #f5f7fa;
+            font-weight: 600;
+        }
+
+        /* 图片样式 + 修复图片失效 */
+        .doc-img {
+            max-width: 100%;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            margin: 15px 0;
+            /* 图片加载失败兜底样式 */
+            min-height: 100px;
+            background: #f9f9f9;
+        }
+
+        /* 提示框 */
+        .tip {
+            background: #f0f7ff;
+            border-left: 4px solid #0092ca;
+            padding: 12px 16px;
+            margin: 18px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+            }
+            .main {
+                padding: 20px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 侧边自动目录 -->
+    <div class="sidebar">
+        <h3>📑 操作手册目录</h3>
+        <ul class="toc-list" id="toc"></ul>
+    </div>
+
+    <!-- 主内容区 -->
+    <div class="main">
+        <h1>高校统战工作模块操作手册</h1>
+
+        <h2>一、使用操作</h2>
+        <p>进入系统后，找到填报任务，点击查看，进入填报界面，找到填报表单界面。点击「填报」或「导入」进行具体信息录入。点击「详情」可跳转至已填写信息界面。</p>
+        <img src="img/01.png" class="doc-img" alt="首页任务界面">
+         <img src="img/02.png" class="doc-img" alt="首页任务">
+
+        <h3>（一）高校统战工作机构设置情况</h3>
+        <p>点击填报，根据学校实际情况，填写对应人数后提交。</p>
+        <img src="img/03.png" class="doc-img" alt="高校统战工作机构设置情况填报界面">
+
+        <h3>（二）高校统战工作团体情况</h3>
+        <p>点击填报，根据学校实际情况，填写各团体对应人数后点击提交。</p>
+        <p>如有表单外团体情况，请点击新增其他进行补充填报。</p>
+        <img src="img/04.png" class="doc-img" alt="高校统战工作团体情况填报界面">
+
+        <h3>（三）高校统战工作体制机制落实情况</h3>
+        <p>点击填报，根据学校实际情况，依次进行填报。</p>
+        <img src="img/05.png" class="doc-img" alt="高校统战工作体制机制落实情况填报界面">
+
+        <h3>（四）高校统战工作开展情况</h3>
+        <p>选派党外干部参加培训情况：点击新增选派党外干部参加培训情况后，进入填报界面。如有多个培训情况，可依次进行新增填写。</p>
+        <p>选派党外干部挂职锻炼情况等其余情况填报方法与上述一致。</p>
+        <img src="img/06.png" class="doc-img" alt="高校统战工作开展情况填报界面">
+
+        <h3>（五）党外各级人大代表、政协委员情况</h3>
+        <p>按照填报提示，填写现任人大代表、政协委员人数。</p>
+        <img src="img/07.png" class="doc-img" alt="党外各级人大代表、政协委员情况填报界面">
+
+        <h3>（六）民主党派成员名册</h3>
+        <p>按照要求如实填写学校民主党派成员信息，此表单不包含无党派成员。</p>
+        <p><strong>1. 单个新增</strong></p>
+        <p>点击填报，进入填报界面，按照提示依次进行填写，名字为必填，其余情况如无可不填写。</p>
+        <img src="img/08.png" class="doc-img" alt="民主党派成员单个新增界面">
+
+        <p><strong>2. 批量导入</strong></p>
+        <p>（1）点击导入后，选择下载模板。填写完模板表后选择上传文件即可进行导入。</p>
+        <img src="img/09.png" class="doc-img" alt="模板下载方法">
+        <img src="img/10.png" class="doc-img" alt="模板下载界面">
+        <p>（2）模板表填写规范：可将全部人员信息填写到已下载的模板表中，模板表填写需要按照系统填写规范，如有不清楚的项目，可在单个新增界面查看具体填写要求。</p>
+        <img src="img/11.png" class="doc-img" alt="模板填写规范">
+        <p>性别、民族、学历、学位根据下拉菜单进行选择；出生年月等时间填写规则为：yyyy-mm（如2000-01）；如成员无某项情况，则可留空或直接填写无。</p>
+
+        <h3>（七）党外知识分子名册</h3>
+        <p>按照要求如实填写学校党外知识分子成员信息。</p>
+        <p><strong>填报范围：</strong></p>
+        <p>1. 政治面貌：无党派及群众；</p>
+        <p>2. 具备以下条件之一的：（1）副高以上职称；（2）副处以上职务；（3）有博士研究生学位；（4）学科带头人或者重要业务骨干；（5）其他有成就、有影响的。</p>
+        <p>可单个新增与批量导入，填报方法可参考民主党派成员名册。</p>
+
+        <h3>（八）高校出国和归国、归侨侨眷、港澳台、少数民族师生情况</h3>
+        <p>按照填报提示及填报范围，如实填写相应人数。</p>
+        <img src="img/12.png" class="doc-img" alt="高校出国和归国、归侨侨眷、港澳台、少数民族师生情况填报界面">
+
+        <h3>（九）公办高校党外干部队伍情况</h3>
+        <p>公办高校按照填报说明，依次填写人数情况。</p>
+        <img src="img/13.png" class="doc-img" alt="公办高校党外干部队伍情况填报界面">
+
+        <h3>（十）民办高校党外干部队伍情况</h3>
+        <p>民办高校按照填报说明，依次填写人数情况。</p>
+        <p><strong>填报范围：</strong>与学校签订劳动人事合同，人事关系在学校，档案在人才交流中心等，并购买社会保险（含五险一金等）的教职工，不包括本校退休返聘人员，以及党政机关、企事业单位退休返聘人员、上级或母体学校派驻人员。</p>
+        <img src="img/14.png" class="doc-img" alt="民办高校党外干部队伍情况填报界面">
+
+        <h3>（十一）高校统战对象情况</h3>
+        <p>点击新增，根据填报要求依次填写对应数量情况。</p>
+        <img src="img/15.png" class="doc-img" alt="高校统战对象情况填报界面">
+
+        <h3>（十二）民主党派基层组织情况</h3>
+        <p>根据要求依次进行新增填写，如某一党派有多个基层组织，可根据实际情况新增多条数据。</p>
+        <img src="img/16.png" class="doc-img" alt="民主党派基层组织情况填报界面">
+
+        <h3>（十三）海外校友会情况统计</h3>
+        <p>根据实际情况如实进行填写，如有多个组织，请如实新增多条数据。</p>
+        <img src="img/17.png" class="doc-img" alt="海外校友会情况统计填报界面">
+
+        <h3>（十四）高校统战工作人员情况</h3>
+        <p>根据实际情况进行人员信息填写。</p>
+        <p><strong>填报范围：</strong>填写分管校领导、从事统战工作的部门名称及统战部部长、副部长和专兼职工作人员信息，临时工作人员不在填报范围。如无某项信息，可留空。</p>
+        <img src="img/18.png" class="doc-img" alt="高校统战工作人员情况填报界面">
+
+        <h2>二、常见问题处理方式</h2>
+        <h3>（一）文件导入失败</h3>
+        <p>根据导入失败文件的错误提示进行检查并按照填写规范重新填写并上传导入。</p>
+
+        <h3>（二）个人单位信息不正确</h3>
+        <p>教师用户：请联系学校云南省教师系统管理员进行修改。</p>
+        <p>行政用户：发送相关证明材料至邮箱：jszc@ynjy.cn</p>
+        <p>咨询电话：0871-65103591</p>
+
+    </div>
+</div>
+
+<script>
+// 自动生成 H2/H3 层级目录 + 滚动高亮
+window.onload = function () {
+    const toc = document.getElementById('toc');
+    const headers = document.querySelectorAll('.main h2, .main h3');
+    let idIndex = 1;
+
+    headers.forEach(item => {
+        // 自动赋值 ID
+        if (!item.id) {
+            item.id = 'sec_' + (idIndex++);
+        }
+        // 创建目录li
+        let li = document.createElement('li');
+        li.className = item.tagName === 'H2' ? 'toc-h2 toc-item' : 'toc-h3 toc-item';
+        li.innerHTML = `<a href="#${item.id}">${item.innerText}</a>`;
+        toc.appendChild(li);
+    });
+
+    // 滚动高亮当前章节
+    const tocItems = document.querySelectorAll('.toc-item');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        headers.forEach(head => {
+            if (window.scrollY >= head.offsetTop - 120) {
+                current = head.id;
+            }
+        });
+        // 清除所有激活
+        tocItems.forEach(item => {
+            item.classList.remove('active');
+            if(item.querySelector('a').getAttribute('href') === '#'+current){
+                item.classList.add('active');
+            }
+        });
+    });
+}
+</script>
+</body>
+</html>
