@@ -1,8 +1,11 @@
+高校统战工作模块操作手册
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 修复GitHub图片防盗链、公网图片不加载问题 -->
+    <meta name="referrer" content="no-referrer">
     <title>高校统战工作模块操作手册</title>
     <style>
         * {
@@ -16,12 +19,16 @@
             color: #333;
             line-height: 1.8;
         }
+        /* Word原文红色重点文字样式 */
+        .red-text {
+            color: #e53e3e;
+            font-weight: 500;
+        }
         /* 整体布局 */
         .container {
             display: flex;
             min-height: 100vh;
         }
-
         /* 侧边目录栏 */
         .sidebar {
             width: 280px;
@@ -78,7 +85,6 @@
             background-color: #393E46;
             color: #fff;
         }
-
         /* 主内容区 */
         .main {
             flex: 1;
@@ -112,7 +118,6 @@
             font-size: 15px;
             color: #444;
         }
-
         /* 列表样式优化 */
         .main ul, .main ol {
             padding-left: 24px;
@@ -123,7 +128,6 @@
             font-size: 15px;
             color: #444;
         }
-
         /* 表格样式 */
         table {
             width: 100%;
@@ -139,18 +143,15 @@
             background: #f5f7fa;
             font-weight: 600;
         }
-
-        /* 图片样式 + 修复图片失效 */
+        /* 图片样式 + 加载失败兜底 */
         .doc-img {
             max-width: 100%;
             border: 1px solid #eee;
             border-radius: 6px;
             margin: 15px 0;
-            /* 图片加载失败兜底样式 */
             min-height: 100px;
             background: #f9f9f9;
         }
-
         /* 提示框 */
         .tip {
             background: #f0f7ff;
@@ -159,7 +160,6 @@
             margin: 18px 0;
             border-radius: 0 6px 6px 0;
         }
-
         /* 移动端适配 */
         @media (max-width: 768px) {
             .container {
@@ -183,15 +183,13 @@
         <h3>📑 操作手册目录</h3>
         <ul class="toc-list" id="toc"></ul>
     </div>
-
     <!-- 主内容区 -->
     <div class="main">
         <h1>高校统战工作模块操作手册</h1>
-
         <h2>一、使用操作</h2>
         <p>进入系统后，找到填报任务，点击查看，进入填报界面，找到填报表单界面。点击「填报」或「导入」进行具体信息录入。点击「详情」可跳转至已填写信息界面。</p>
         <img src="img/01.png" class="doc-img" alt="首页任务界面">
-         <img src="img/02.png" class="doc-img" alt="首页任务">
+        <img src="img/02.png" class="doc-img" alt="首页任务">
 
         <h3>（一）高校统战工作机构设置情况</h3>
         <p>点击填报，根据学校实际情况，填写对应人数后提交。</p>
@@ -213,12 +211,15 @@
 
         <h3>（五）党外各级人大代表、政协委员情况</h3>
         <p>按照填报提示，填写现任人大代表、政协委员人数。</p>
+        <p><span class="red-text">只填现任的人大代表,曾任人大代表的不用填</span></p>
         <img src="img/07.png" class="doc-img" alt="党外各级人大代表、政协委员情况填报界面">
 
         <h3>（六）民主党派成员名册</h3>
         <p>按照要求如实填写学校民主党派成员信息，此表单不包含无党派成员。</p>
         <p><strong>1. 单个新增</strong></p>
         <p>点击填报，进入填报界面，按照提示依次进行填写，名字为必填，其余情况如无可不填写。</p>
+        <p><span class="red-text">已退休的民主党派成员也要填写</span></p>
+        <p><span class="red-text">工作单位具体到院(系)、部门</span></p>
         <img src="img/08.png" class="doc-img" alt="民主党派成员单个新增界面">
 
         <p><strong>2. 批量导入</strong></p>
@@ -227,7 +228,9 @@
         <img src="img/10.png" class="doc-img" alt="模板下载界面">
         <p>（2）模板表填写规范：可将全部人员信息填写到已下载的模板表中，模板表填写需要按照系统填写规范，如有不清楚的项目，可在单个新增界面查看具体填写要求。</p>
         <img src="img/11.png" class="doc-img" alt="模板填写规范">
-        <p>性别、民族、学历、学位根据下拉菜单进行选择；出生年月等时间填写规则为：yyyy-mm（如2000-01）；如成员无某项情况，则可留空或直接填写无。</p>
+        <p><span class="red-text">性别、民族、学历、学位根据下拉菜单进行选择</span></p>
+        <p><span class="red-text">出生年月等时间填写规则为：yyyy-mm（如2000-01）</span></p>
+        <p>如成员无某项情况，则可留空或直接填写无。</p>
 
         <h3>（七）党外知识分子名册</h3>
         <p>按照要求如实填写学校党外知识分子成员信息。</p>
@@ -238,6 +241,10 @@
 
         <h3>（八）高校出国和归国、归侨侨眷、港澳台、少数民族师生情况</h3>
         <p>按照填报提示及填报范围，如实填写相应人数。</p>
+        <p><span class="red-text">出国和归国留学人员统计范围(含中共党员):公派或自费出国留学一年以上,并具备以下条件之一者:</span></p>
+        <p><span class="red-text">(1)在国外取得学士及以上学位或获得国外毕业研究生学历;</span></p>
+        <p><span class="red-text">(2)出国前已具有中级及以上专业技术职务;</span></p>
+        <p><span class="red-text">(3)国内已获得博士学位,出国进行博士后研究或进修。</span></p>
         <img src="img/12.png" class="doc-img" alt="高校出国和归国、归侨侨眷、港澳台、少数民族师生情况填报界面">
 
         <h3>（九）公办高校党外干部队伍情况</h3>
@@ -246,7 +253,7 @@
 
         <h3>（十）民办高校党外干部队伍情况</h3>
         <p>民办高校按照填报说明，依次填写人数情况。</p>
-        <p><strong>填报范围：</strong>与学校签订劳动人事合同，人事关系在学校，档案在人才交流中心等，并购买社会保险（含五险一金等）的教职工，不包括本校退休返聘人员，以及党政机关、企事业单位退休返聘人员、上级或母体学校派驻人员。</p>
+        <p><strong>填报范围：</strong><span class="red-text">与学校签订劳动人事合同，人事关系在学校，档案在人才交流中心等，并购买社会保险（含五险一金等）的教职工，不包括本校退休返聘人员，以及党政机关、企事业单位退休返聘人员、上级或母体学校派驻人员。</span></p>
         <img src="img/14.png" class="doc-img" alt="民办高校党外干部队伍情况填报界面">
 
         <h3>（十一）高校统战对象情况</h3>
@@ -274,17 +281,14 @@
         <p>教师用户：请联系学校云南省教师系统管理员进行修改。</p>
         <p>行政用户：发送相关证明材料至邮箱：jszc@ynjy.cn</p>
         <p>咨询电话：0871-65103591</p>
-
     </div>
 </div>
-
 <script>
 // 自动生成 H2/H3 层级目录 + 滚动高亮
 window.onload = function () {
     const toc = document.getElementById('toc');
     const headers = document.querySelectorAll('.main h2, .main h3');
     let idIndex = 1;
-
     headers.forEach(item => {
         // 自动赋值 ID
         if (!item.id) {
@@ -296,7 +300,6 @@ window.onload = function () {
         li.innerHTML = `<a href="#${item.id}">${item.innerText}</a>`;
         toc.appendChild(li);
     });
-
     // 滚动高亮当前章节
     const tocItems = document.querySelectorAll('.toc-item');
     window.addEventListener('scroll', () => {
